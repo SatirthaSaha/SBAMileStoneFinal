@@ -1,5 +1,7 @@
 package com.example.sba.service;
 
+import java.math.BigInteger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,6 +34,12 @@ public class UserServiceImpl implements UserService{
 		}
 		else
 			return false;
+	}
+
+	@Override
+	public User getUserDetails(BigInteger id) {
+		// TODO Auto-generated method stub
+		return userDao.getOne(id);
 	}
 
 }

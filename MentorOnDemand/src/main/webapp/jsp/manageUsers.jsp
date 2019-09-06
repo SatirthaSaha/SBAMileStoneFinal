@@ -90,6 +90,7 @@
 									<th>Registration Code</th>
 									<th>Registration Date</th>
 									<th></th>
+									<th></th>
 								</tr>
 								<c:forEach items="${userList}" var="userList" varStatus="status">
 								
@@ -101,6 +102,10 @@
 									<td>${userList.address }</td>
 									<td>${userList.regCode }</td>
 									<td>${userList.regDatetime }</td>
+									<td><c:if test="${userList.active==1 }"><a type="button" class="btn btn-success"
+											href="<c:url value='/activate/${userList.id}' />">Deactivate</a></c:if>
+											<c:if test="${userList.active==0 }"><a type="button" class="btn btn-success"
+											href="<c:url value='/activate/${userList.id}' />">Activate</a></c:if></td>
 									<td style="border-right: none;"><a type="button" class="btn btn-danger"
 											href="<c:url value='/userRemove/${userList.id}' />">Remove</a></td>
 								</tr>

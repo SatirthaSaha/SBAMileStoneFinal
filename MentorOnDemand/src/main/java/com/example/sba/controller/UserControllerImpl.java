@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -89,4 +90,15 @@ public class UserControllerImpl {
 		return new java.sql.Timestamp(date.getTime());
 	}
 	
-}
+	 @RequestMapping(path="/activate/{id}",method=RequestMethod.GET)
+	  public  String editUser(@PathVariable ("id") BigInteger id) {
+	User user=userService.getUserDetails(id);
+	if(user.getActive()==0)
+	 user.setActive(1);
+	else
+	 user.setActive(0);
+	userService.registerUser(user);
+	return "redirect:/userList";
+	  }
+	}
+	
