@@ -27,7 +27,7 @@
 }
 </style>
 </head>
-<body>
+<body background="./images/background.jpg" style="background-repeat: no-repeat; background-size: cover;">
 	<%List<Technology> skillList = (List) request.getAttribute("skillList"); %>
 	<div class="container-fluid">
 		<nav class="navbar navbar-inverse">
