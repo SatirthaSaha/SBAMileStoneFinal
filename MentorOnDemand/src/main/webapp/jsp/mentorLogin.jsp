@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="css/login.css">
 
 </head>
-<body>
+<body background="./images/background.jpg" style="background-repeat: no-repeat; background-size: cover;">
 
 	<div class="container-fluid">
 		<nav class="navbar navbar-inverse">
