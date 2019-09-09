@@ -38,7 +38,7 @@
 						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">WebSiteName</a>
+					<a class="navbar-brand" href="#"><span class="glyphicon glyphicon-education"></span>  ShikshaDham</a>
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbar" style="">
 					<ul class="nav navbar-nav">
@@ -49,11 +49,14 @@
 								<li><a href="#">Page 1-2</a></li>
 								<li><a href="#">Page 1-3</a></li>
 							</ul></li> -->
-						<li><a href="./manageSkills.html">Manage Skills</a></li>
-						<li class="active"><a href="./manageUsers.html">Manage Users</a></li>
-						<li><a href="./manageMentors.html">Manage Mentors</a></li>
-						<li><a href="./paymentsReceived.html">Payments Received</a></li>
-						<li><a href="./paymentsMade.html">Payments Made</a></li>
+						<spring:url value="/skillList" var="url1" htmlEscape="true" />
+						<li><a href="${url1 }">Manage Skills</a></li>
+						<spring:url value="/userList" var="ul" htmlEscape="true" />
+						<li class="active"><a href="${ul }">Manage Users</a></li>
+						<spring:url value="/mentorList" var="ml" htmlEscape="true" />
+						<li ><a href="${ml }">Manage Mentors</a></li>
+						<li><a href="#">Payments Received</a></li>
+						<li><a href="#">Payments Made</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span>
@@ -61,7 +64,8 @@
 						<li><a href="#" data-toggle="modal"
 							data-target=".bd-example-modal-lg"><span
 								class="glyphicon glyphicon-bell"></span></a></li>
-						<li><a href="./adminLogin.html"><span
+						<spring:url value="/logout" var="logout" htmlEscape="true" />
+						<li><a href="${logout }"><span
 								class="glyphicon glyphicon-log-in"></span> Logout</a></li>
 
 					</ul>

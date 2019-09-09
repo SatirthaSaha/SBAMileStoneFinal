@@ -100,5 +100,12 @@ public class UserControllerImpl {
 	userService.registerUser(user);
 	return "redirect:/userList";
 	  }
+	 
+	 @RequestMapping(value = "/logout", method = RequestMethod.GET)
+		public String logout(ModelMap model) throws SQLException {
+			return "redirect:/adminLogin";
+
+		}
+	 
 	}
 	

@@ -35,13 +35,16 @@
 						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">WebSiteName</a>
+					<a class="navbar-brand" href="#"><span class="glyphicon glyphicon-education"></span>  ShikshaDham</a>
 				</div>
 				<div class="collapse navbar-collapse" id="myNavbar" style="">
 					<ul class="nav navbar-nav">
-						<li><a href="./mentorLogin.html">Login As Mentor</a></li>
-						<li><a href="./adminLogin.html">Login As Admin</a></li>
-						<li class="active"><a href="./userLogin.html">Login As User</a></li>
+						<spring:url value="/mentorLogin" var="url3" htmlEscape="true" />
+						<li ><a href="${url3 }">Login As Mentor</a></li>
+						<spring:url value="/adminLogin" var="url1" htmlEscape="true" />
+						<li ><a href="${url1 }">Login As Admin</a></li>
+						<spring:url value="/userLogin" var="url2" htmlEscape="true" />
+						<li class="active"><a href="${url2 }">Login As User</a></li>
 						
 					</ul>
 					
