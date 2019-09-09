@@ -29,7 +29,7 @@
 }
 </style>
 </head>
-<body>
+<body background="./images/background.jpg" style="background-repeat: no-repeat; background-size: cover;">
 	<%List<Mentor> mentorList = (List) request.getAttribute("mentorList"); %>
 	<div class="container-fluid">
 		<nav class="navbar navbar-inverse">
