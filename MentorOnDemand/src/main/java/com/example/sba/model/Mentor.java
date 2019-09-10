@@ -3,6 +3,7 @@ package com.example.sba.model;
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.sql.Date;
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,7 +17,6 @@ import javax.persistence.Table;
 @Table(name = "Mentor")
 public class Mentor implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)	
     private BigInteger id;
    
     @Column(name="username")
@@ -32,10 +32,10 @@ public class Mentor implements Serializable {
     private Long contact;
 
     @Column(name="reg_datetime")
-    private Date regDatetime ;
+    private Timestamp regDatetime ;
 
     @Column(name="reg_code")
-    private String regCode;
+    private int regCode;
     
     public BigInteger getId() {
 		return id;
@@ -72,23 +72,28 @@ public class Mentor implements Serializable {
 		this.contact = contact;
 	}
 
-	public Date getRegDatetime() {
+	public Timestamp getRegDatetime() {
 		return regDatetime;
 	}
 
-	public void setRegDatetime(Date regDatetime) {
-		this.regDatetime = regDatetime;
+	public void setRegDatetime(Timestamp sqlTimeStamp) {
+		this.regDatetime = sqlTimeStamp;
 	}
 
-	public String getRegCode() {
+	public int getRegCode() {
 		return regCode;
 	}
 
-	public void setRegCode(String regCode) {
+	public void setRegCode(int regCode) {
 		this.regCode = regCode;
 	}
-	public Mentor(String username, String linkedinUrl, String password, Long contact, Date regDatetime,
-			String regCode) {
+	
+	
+	public void setId(BigInteger id) {
+		this.id = id;
+	}
+	public Mentor(String username, String linkedinUrl, String password, Long contact, Timestamp regDatetime,
+			int regCode) {
 		super();
 		this.username = username;
 		this.linkedinUrl = linkedinUrl;
@@ -100,6 +105,11 @@ public class Mentor implements Serializable {
 	public Mentor() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return "Mentor [id=" + id + ", username=" + username + ", linkedinUrl=" + linkedinUrl + ", password=" + password
+				+ ", contact=" + contact + ", regDatetime=" + regDatetime + ", regCode=" + regCode + "]";
 	}
 
     
